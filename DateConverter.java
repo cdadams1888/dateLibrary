@@ -7,6 +7,7 @@ public class DateConverter {
     }
 
     public DateConverter(int birthMonth, int birthDay, int birthYear) {
+        // Taking in birthDay and birthYear, just in case we need formatting for them in the future.
         int month = birthMonth;
         int day = birthDay;
         int year = birthYear;
@@ -39,10 +40,11 @@ public class DateConverter {
                     break;
             case 12: monthConverted = "December";
                     break;
-            default: monthConverted = null;
+            default: monthConverted = "0";
                     break;
 
         }
+        //TODO: PUT TRY / CATCH to check if "0" here..
         return monthConverted;
     }
 
@@ -79,8 +81,40 @@ public class DateConverter {
         }
         return daysInMonth;
     }
-}
 
+   public String shortMonthToFull(String month) {
+        switch(month) {
+            case "Jan": monthConverted = "January";
+                        break;
+            case "Feb": monthConverted = "February";
+                        break;
+            case "Mar": monthConverted = "March";
+                        break;
+            case "Apr": monthConverted = "April";
+                        break;
+            case "May": monthConverted = "May";
+                        break;
+            case "Jun": monthConverted = "June";
+                        break;
+            case "Jul": monthConverted = "July";
+                        break;
+            case "Aug": monthConverted = "August";
+                        break;
+            case "Sep": monthConverted = "September";
+                        break;
+            case "Oct": monthConverted = "October";
+                        break;
+            case "Nov": monthConverted = "November";
+                        break;
+            case "Dec": monthConverted = "December";
+                        break;
+            default: monthConverted = "0";
+                        break;
+        }
+        return monthConverted;
+   }
+
+}
 
 
 
